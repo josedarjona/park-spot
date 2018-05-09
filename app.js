@@ -17,13 +17,15 @@ const LocalStrategy  = require("passport-local").Strategy;
 
 const flash          = require("connect-flash");
 
+const axios = require("axios");
+
 
 
 
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/park-spot', {useMongoClient: true})
+  .connect(process.env.MONGOURI, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
