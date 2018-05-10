@@ -11,19 +11,23 @@
 <h2><a href="/createspot/{{locationInfo.id}}">create a spot</a></h2>
 
 
-<div class="container-fluid">
-  <div class="row">
+{{!-- <div class="container-fluid">
+  <div class="row"> --}}
+    <table class="table table-responsive">
+      <tr>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+      </tr>
     {{#each parkingSpots}}
-    <img src="{{this.imgPath}}" alt="">
-    <h2>{{this.spotName}}</h2>
-    <h2>{{this.createdAt}}</h2>
-     {{#if this.spotUser}}
-    <h2><a href="delete">delete</a></h2> 
-    <br><br>
-    <h2><a href="edit">|||edit</a></h2>
-    {{/if}}
+
+    <tr class="text-center">
+    <td><a href="/parkspot/{{this._id}}"><img src="{{this.imgPath}}" alt="" class="img-park"></td></a>
+    <td><a href="/parkspot/{{this._id}}">{{this.spotName}}</td></a>
+    <td><a href="/parkspot/{{this._id}}">{{this.createdAt}}</td></a>
+     </tr>
     {{/each}}
-   
+   </table>
     
 
 
@@ -32,6 +36,6 @@
 
 
 
-
-  </div>
-</div>
+   
+  {{!-- </div>
+</div> --}}

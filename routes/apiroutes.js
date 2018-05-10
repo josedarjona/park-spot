@@ -16,19 +16,22 @@ const axios = require("axios");
 // const venueAPI = url("")
 
 router.get('/locationsearch', (req, res, next) => {
+  console.log(req.user);
   res.render('api/locationsearch');
 });
 
 router.get('/locationinfo/:id', (req, res, next) => {
 
-  // console.log(req.params.id)
+  console.log("check this !!!--->", req.params.id)
+  const  apiID = req.params.id
 
   axios.get(`https://app.ticketmaster.com/discovery/v2/venues/${req.params.id}.json?apikey=Toa0rAG7W0RbHa89xDXyMzcObQHh8kRX`)
   .then((result)=>{
-    ParkSpot.find()
+    console.log("this is the result!!--->", result.data.id)
+    ParkSpot.find({apiID:result.data.id})
     .then((resultFromDB) => {
-      console.log("parking spots ----- ", resultFromDB);
-      console.log("location info ---- ", result.data)
+      // console.log("parking spots ----- ", resultFromDB);
+      // console.log("location info ---- ", result.data)
       res.render('api/showlocation', { locationInfo : result.data, parkingSpots: resultFromDB})
     })
     .catch((err) => {

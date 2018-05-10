@@ -1,0 +1,25 @@
+<h1>{{user.username}}'s page</h1>
+
+<h2>My Spots</h2>
+
+    <table class="table table-responsive">
+      <tr>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+        <th class="text-center">wow</th>
+      </tr>
+    {{#each parkingSpots}}
+
+    <tr class="text-center">
+    <td><a href="/parkspot/{{this._id}}"><img src="{{this.imgPath}}" alt="" class="img-park"></td></a>
+    <td><a href="/parkspot/{{this._id}}">{{this.spotName}}</td></a>
+    <td><a href="/parkspot/{{this._id}}">{{this.spotLocation}}</td></a>
+    <td><a href="/locationinfo/{{this.apiID}}"></td></a>
+    <td><a href="/parkspot/edit/{{this._id}}">edit</td></a>
+    <td><a href="/parkspot/delete/{{this._id}}">delete</td></a>
+     </tr>
+    {{/each}}
+   </table>

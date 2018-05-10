@@ -129,6 +129,8 @@ const apiroutes = require('./routes/apiroutes');
 app.use('/', apiroutes);
 const editroutes = require('./routes/editroutes');
 app.use('/', editroutes);
+const showSpotRoutes = require('./routes/showSpotRoutes');
+app.use('/', showSpotRoutes);
 
 
 module.exports = app;

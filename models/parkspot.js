@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const parkspotSchema = new Schema({
-  spotUser: String,
+  spotUser: {type: String},
   apiID: String,
   spotName: {type:String, unique:true, required: true},
   spotLocation: String,

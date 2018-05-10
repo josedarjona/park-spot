@@ -4,7 +4,8 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  // color: #00B7FF;
+  text-decoration: none;
 }
 
 .img-search {
@@ -14,6 +15,11 @@ a {
   height: 200px;
   
   
+}
+
+.img-park{
+  width: 100px;
+  height: 100px;
 }
 #menu-outer {
 	height: 84px;
