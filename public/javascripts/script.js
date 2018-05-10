@@ -15,9 +15,9 @@ $(document).ready(function () {
       .then(searchResult => {
         console.log(searchResult.data)
         if (searchResult.data._embedded === undefined) {
-          $('.table-responsive').empty();
+          $('.row').empty();
 
-          $('.table-responsive').append(`
+          $('.row').append(`
       <div class="no results">
       <h3> No Results :( </h3>
       
@@ -36,7 +36,7 @@ $(document).ready(function () {
         
 
 
-        $('.table-responsive').empty();
+        $('.row').empty();
 
         if (searchResult.data.hasOwnProperty('_embedded')) {
           venueSearched.forEach(venueResult => {
@@ -49,60 +49,60 @@ $(document).ready(function () {
             // venueSearched.map(venueResult => {
             if (venueResult.images && venueResult.state) {
               const checkImage = venueResult.images[0].url;
-              $('.table-responsive').append(`
+              $('.row').append(`
 
-              <table class="table">
-              <div class="card-columns">
+
+              <div class="col-md-3">
               <div class="card">
-              <img class="card-img-top" src="${checkImage}" alt="Card image cap">
+              <img class="card-img-top img-search img-fluid img-thumbnail" src="${checkImage}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
                 <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.state.name} </p>
                 </div>
               </div>
               </div>
-            </table>
+
             
 
 
           `)
             } else if (!venueResult.state && !venueResult.images) {
 
-              $('.table-responsive').append(`
+              $('.row').append(`
 
 
-              <table class="table">
-              <div class="card-columns">
+
+              <div class="col-md-3">
               <div class="card">
-              <img class="card-img-top" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
+              <img class="card-img-top img-search img-fluid img-thumbnail" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
                 <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.country.name} </p>
                 </div>
               </div>
               </div>
-              </table>
+
               
            
 
           `)
             } else if(!venueResult.images) {
 
-              $('.table-responsive').append(`
+              $('.row').append(`
 
 
 
-              <table class="table">
-              <div class="card-columns">
-            <div class="card">
-            <img class="card-img-top" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
+
+              <div class="col-md-3">
+              <div class="card">
+            <img class="card-img-top img-search img-fluid img-thumbnail" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
               <div class="card-body">
               <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
               <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.country.name} </p>
               </div>
             </div>
-            </div>
-            </table>
+              </div>
+
             
           
 

@@ -1,0 +1,34 @@
+<div class="container">  
+  <form id="add-spot" action="/createspot/{{this.id}}" method="post" enctype="multipart/form-data">
+    <h3>Add a Spot!</h3>
+    <h4>All fields must be filled.</h4>
+
+      <input name="spotName" placeholder="Name your spot!" type="text" tabindex="1">
+      <br><br>
+
+      <input name="spotLoc" placeholder="Give the address!" type="text" tabindex="2">
+      <br><br>
+
+      {{!-- <input name="spot-pay" placeholder="How can you pay?" type="text" tabindex="3"> --}}
+      <label for="spotPay">How can you pay?:</label>
+      <select name="spotPay">
+        <option value="Cash">Cash</option>
+        <option value="Card">Card</option>
+        <option value="Both">Both</option>
+      </select>
+      <br><br>
+      <textarea name="spotDesc" placeholder="Type a description of your spot!" tabindex="4"></textarea>
+      <br><br>
+      <fieldset>
+      <span> ------------------------------ </span>
+      <br><br>
+      <label for="photo">Add a photo of the spot!</label>
+      <br><br>
+      <input type="file" name="photo">
+      <br><br>
+      <button type="submit" class="spot-submit">Add Spot</button>
+      </fieldset>
+  </form>
+ 
+  
+</div>

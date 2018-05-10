@@ -7,11 +7,29 @@ a {
   color: #00B7FF;
 }
 
-// img {
-//   height: 200px;
-//   width: 200px;
-// }
-
-.card-columns {
-  display: inline-block;
+.img-search {
+	display: block;
+	border: 0;
+	width: 300px;
+  height: 200px;
+  
+  
 }
+#menu-outer {
+	height: 84px;
+	background: url(images/bar-bg.jpg) repeat-x;
+}
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+ul.onetest li {
+  display: inline;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+

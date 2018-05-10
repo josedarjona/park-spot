@@ -3,12 +3,14 @@ const router  = express.Router();
 const passport    = require("passport");
 // User model
 const User        = require("../models/user");
+const ParkSpot = require("../models/parkspot");
+const Review = require("../models/spotreview");
 
 const flash       = require("connect-flash");
 
 const ensureLogin = require("connect-ensure-login");
-
-
+const axios = require("axios");
+const uploadCloud = require('../config/cloudinary.js');
 // BCrypt to encrypt passwords
 const bcrypt         = require("bcrypt");
 const bcryptSalt     = 10;

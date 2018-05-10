@@ -2,10 +2,36 @@
 
 
 <h2>{{locationInfo.name}}'s spots</h2>
-<h3>{{locationInfo.city.name}}</h3>
-<h3>{{locationInfo.state.name}}</h3>
-<h3>{{locationInfo.postalcode}}</h3>
-<h3>{{locationInfo.address.line1}}</h3>
-<h3>{{locationInfo.country.name}}</h3>
+<h3>{{locationInfo.address.line1}} {{locationInfo.postalCode}} </h3>
+<h3>{{locationInfo.city.name}} {{locationInfo.state.name}} {{locationInfo.country.name}}</h3>
+<h3></h3>
 <br><br>
-<p>{{locationInfo.parkingInfo}}</p>
+<p>{{locationInfo.parkingDetail}}</p>
+
+<h2><a href="/createspot/{{locationInfo.id}}">create a spot</a></h2>
+
+
+<div class="container-fluid">
+  <div class="row">
+    {{#each parkingSpots}}
+    <img src="{{this.imgPath}}" alt="">
+    <h2>{{this.spotName}}</h2>
+    <h2>{{this.createdAt}}</h2>
+     {{#if this.spotUser}}
+    <h2><a href="delete">delete</a></h2> 
+    <br><br>
+    <h2><a href="edit">|||edit</a></h2>
+    {{/if}}
+    {{/each}}
+   
+    
+
+
+
+
+
+
+
+
+  </div>
+</div>
