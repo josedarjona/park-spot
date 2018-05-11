@@ -32,6 +32,12 @@ router.get('/locationinfo/:id', (req, res, next) => {
     .then((resultFromDB) => {
       // console.log("parking spots ----- ", resultFromDB);
       // console.log("location info ---- ", result.data)
+      // console.log("blah-------->",resultFromDB[0].createdAt.toDateString())
+      // const dateSpot = resultFromDB[0].createdAt.toDateString();
+      // ParkSpot.update({}, {$set: {createdAt: dateSpot}})
+      // .then(spots => {
+      //   console.log("heyyy : ", spots)
+      // })
       res.render('api/showlocation', { locationInfo : result.data, parkingSpots: resultFromDB})
     })
     .catch((err) => {
