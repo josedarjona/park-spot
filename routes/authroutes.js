@@ -99,7 +99,7 @@ router.get("/login", (req, res, next) => {
 
 router.post("/login", passport.authenticate("local",
 {
-  successRedirect: "/",
+  successRedirect: "/locationsearch",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
@@ -108,7 +108,7 @@ router.post("/login", passport.authenticate("local",
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 

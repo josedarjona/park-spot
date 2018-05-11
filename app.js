@@ -18,8 +18,10 @@ const LocalStrategy  = require("passport-local").Strategy;
 const flash          = require("connect-flash");
 
 const axios = require("axios");
+var Handlebars     = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
 
-
+HandlebarsIntl.registerWith(Handlebars);
 
 
 
