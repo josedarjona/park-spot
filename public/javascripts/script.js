@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
 
-
+  $(".dropdown-trigger").dropdown();
 
   $('.submit-button').click(function () {
     const searchVenue = $('.search-venue').val();
@@ -52,15 +52,19 @@ $(document).ready(function () {
               $('.row').append(`
 
 
-              <div class="col-md-3">
-              <div class="card">
-              <img class="card-img-top img-search img-fluid img-thumbnail" src="${checkImage}" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
-                <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.state.name} </p>
+
+
+              <div class="col s12 m4">
+                <div class="card hoverable">
+                  <div class="card-image imgcard">
+                   <img class="imgcard" src="${checkImage}">
+                  </div>
+                   <div class="card-content">
+                   <span class="card-title blue-text text-darken-2"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></span>
+               <p>city, state name: ${venueResult.city.name},${venueResult.state.name}</p>
                 </div>
-              </div>
-              </div>
+                </div>
+            </div>
 
             
 
@@ -72,15 +76,19 @@ $(document).ready(function () {
 
 
 
-              <div class="col-md-3">
-              <div class="card">
-              <img class="card-img-top img-search img-fluid img-thumbnail" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
-                <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.country.name} </p>
+      
+
+              <div class="col s12 m4">
+              <div class="card hoverable">
+                <div class="card-image">
+                 <img class="imgcard" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif">
                 </div>
+                 <div class="card-content">
+                 <span class="card-title blue-text text-darken-2"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></span>
+             <p>city, state name: ${venueResult.city.name},${venueResult.country.name}</p>
               </div>
               </div>
+          </div>
 
               
            
@@ -91,17 +99,17 @@ $(document).ready(function () {
               $('.row').append(`
 
 
-
-
-              <div class="col-md-3">
-              <div class="card">
-            <img class="card-img-top img-search img-fluid img-thumbnail" src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif" alt="Card image cap">
-              <div class="card-body">
-              <h5 class="card-title"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></h5>
-              <p class="card-text">city, state name: ${venueResult.city.name},${venueResult.country.name} </p>
+              <div class="col s12 m4">
+              <div class="card hoverable">
+                <div class="card-image">
+                 <img class="imgcard"src="https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif">
+                </div>
+                 <div class="card-content">
+                 <span class="card-title blue-text text-darken-2"><a href="/locationinfo/${venueResult.id}">${venueResult.name}</a></span>
+             <p>city, state name: ${venueResult.city.name},${venueResult.country.name}</p>
               </div>
-            </div>
               </div>
+          </div>
 
             
           

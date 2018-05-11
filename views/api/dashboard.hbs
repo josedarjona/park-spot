@@ -1,8 +1,6 @@
-<h1>{{user.username}}'s page</h1>
 
-<h2>My Spots</h2>
 
-    <table class="table table-responsive table-hover">
+    {{!-- <table class="table table-responsive table-hover">
       <tr>
         <th class="text-center">wow</th>
         <th class="text-center">wow</th>
@@ -22,4 +20,31 @@
     <td><a href="/parkspot/delete/{{this._id}}">delete</td></a>
      </tr>
     {{/each}}
-   </table>
+   </table> --}}
+
+<div class="container">
+  <h1><bold>{{user.username}}'s Spots</bold></h1>
+  <div class="row">
+    {{#each parkingSpots}}
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-image">
+          <img class="imgcard" class="imgcard"src="{{this.imgPath}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title blue-text text-darken-2"><a href="/parkspot/{{this._id}}">{{this.spotName}}</a></span>
+          <p>{{this.spotLocation}}</p>
+          <p>{{this.spotDesc}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/parkspot/edit/{{this._id}}">Edit</a>
+          <form action="/parkspots/delete/{{this._id}}" method="POST">
+            <button type="submit" id="linkbtn">Delete</button>
+          {{!-- <a href="/parkspot/delete/{{this._id}}">Delete</a> --}}
+          </form>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

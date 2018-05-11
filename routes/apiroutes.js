@@ -27,7 +27,12 @@ router.get('/locationinfo/:id', (req, res, next) => {
 
   axios.get(`https://app.ticketmaster.com/discovery/v2/venues/${req.params.id}.json?apikey=Toa0rAG7W0RbHa89xDXyMzcObQHh8kRX`)
   .then((result)=>{
-    console.log("this is the result!!--->", result.data.id)
+    console.log("this is the result!!--->", result.data)
+    // const locationImg = "https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy.gif"
+    // if(locationImg === undefined){
+    //   locationImg = result.data.images[0].url
+    // }
+    // console.log("this is the img!!--->", locationImg)
     ParkSpot.find({apiID:result.data.id})
     .then((resultFromDB) => {
       // console.log("parking spots ----- ", resultFromDB);

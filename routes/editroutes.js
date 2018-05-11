@@ -191,9 +191,21 @@ router.get('/dashboard', ensureAuthenticated, (req, res, next) => {
       next(err);
     });
 
-
-
-
 });
+
+router.post('/parkspots/delete/:id', function(req, res){
+  const parkSpotId = req.params.id;
+  ParkSpot.findByIdAndRemove(parkSpotId)
+  .then(spot => {
+    console.log(spot);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+res.redirect('/dashboard')
+})
+
+
+
 
 module.exports = router;

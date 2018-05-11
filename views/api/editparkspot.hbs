@@ -10,25 +10,29 @@
       <br><br>
 
       {{!-- <input name="spot-pay" placeholder="How can you pay?" type="text" tabindex="3"> --}}
-      <label for="spotPay">How can you pay?:</label>
-      <select name="spotPay">
+      
+      <label class="biggertext black-text"for="spotPay">How can you pay?:</label>
+
+      <select class="browser-default" name="spotPay">
         <option value="{{parkingSpots.spotPay}}">{{parkingSpots.spotPay}}</option>
         <option value="Cash">Cash</option>
         <option value="Card">Card</option>
         <option value="Both">Both</option>
       </select>
+
       <br><br>
+      <label class="biggertext black-text" for="spotDesc">Description of Spot:</label>
       <textarea name="spotDesc" placeholder="Type a description of your spot!" tabindex="4">{{parkingSpots.spotName}}</textarea>
       <br><br>
       <fieldset>
-      <span> ------------------------------ </span>
+     
       <br><br>
-      <label for="photo">Add a photo of the spot!</label>
+      <label class="biggertext black-text"for="photo">Add a photo of the spot!</label>
       <br><br>
       <input type="file" name="photo" value="{{parkingSpots.imgPath}}">
       <br><br>
       {{#if parkingSpots.imgPath}}
-      <img src="{{parkingSpots.imgPath}}" alt="">
+      <img class="imgcard"src="{{parkingSpots.imgPath}}" alt="">
       {{/if}}
       <br><br>
       <button type="submit" class="spot-submit">Add Spot</button>

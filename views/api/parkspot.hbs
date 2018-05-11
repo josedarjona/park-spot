@@ -1,6 +1,28 @@
-<h1>name:{{parkingSpots.spotName}}</h1>
+{{!-- <h1>name:{{parkingSpots.spotName}}</h1>
 <h3>loc:{{parkingSpots.spotLocation}}</h3>
 <h3>paytype:{{parkingSpots.spotPay}}</h3>
 <h3>desc:{{parkingSpots.spotDesc}}</h3>
 <img src="{{parkingSpots.imgPath}}" alt="">
-<a href="/edit/{{parkingSpots.id}}"></a>
+<a href="/edit/{{parkingSpots.id}}"></a> --}}
+
+
+<div class="container">
+  <div class="col s12 m7">
+    <h2 class="header">{{parkingSpots.spotName}}</h2>
+    <div class="card horizontal">
+      <div class="card-image responsive-img">
+        <img class="imgcard"src="{{parkingSpots.imgPath}}" alt="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{parkingSpots.spotLocation}} </p>
+          <p>Payment Type: {{parkingSpots.spotPay}}</p>
+          <p>{{parkingSpots.spotDesc}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/parkspot/edit/{{parkingSpots.id}}">Edit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>{{title}}</title>
-        {{!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 
@@ -10,9 +10,11 @@
 
     <script type="text/javascript" src="../public/javascripts/script.js"></script>
     <link rel="stylesheet" href="../public/stylesheets/style.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' /> --}}
+    <link rel='stylesheet' href='/stylesheets/style.css' /> 
     {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> --}}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link rel='stylesheet' href='/stylesheets/style.css' />
         {{!-- added --}}
         <script src="handlebars/dist/handlebars.min.js"></script>
@@ -33,39 +35,74 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">Park Spot</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/signup">Signup</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/locationsearch">Search</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav> --}}
+        </div> --}}
 
-    <div class="banner">
+
+    {{!-- <div class="banner">
 <div class="topnav">
 <div class="text ttitle">
 <a href="/" >Park Spot</a>
 </div>
 <div class="text nav ralign">
+            <form  action="post"></form>
             <a href="/signup">Signup</a>
             <a href="/login">Login</a>
             <a href="/logout">Logout</a>
             <a href="/locationsearch">Search</a>
             <a href="/dashboard">Dashboard</a>
 </div>
-</div>
+</div> --}}
 
-    {{{body}}}
-
-    
+    {{!-- {{{body}}} --}}
 
     
 
-    {{!-- <script src='/javascripts/script.js'></script> --}}
+    
+
+    {{!-- <script src='/javascripts/script.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  </body> --}}
+{{!-- </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head> --}}
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/login">Login</a></li>
+  {{!-- <li class="divider"></li> --}}
+  <li><a href="/logout">Logout</a></li>
+</ul>
+  <nav class="grey darken-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><b>Park Spot</b></a>
+      <ul class="right ">
+        
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/locationsearch">Search</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Login<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      </div>  
+  </nav>
+<body>
+  
+  {{{body}}}
+
+  
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
   </body>
 </html>

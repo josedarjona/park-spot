@@ -1,4 +1,4 @@
-<h2>Signup</h2>
+{{!-- <h2>Signup</h2>
 
 <form action="/signup" method="POST">
   <label for="username">Username</label>
@@ -21,4 +21,68 @@
     Do you already have an account?
     <a href="/login">Login</a>
   </p>
-</form>
+</form> --}}
+
+
+<div class="section"></div>
+  <main>
+    <center>
+      <div class="section"></div>
+
+      <img class="login-logo" src="../images/spot.png" alt="">
+      <h5 class="grey-text">Create your account!</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+          <form class="col s12" action="/signup" method="post">
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+
+
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='email' name='email' id='email' placeholder="Enter your email"/>
+                <label for='email'>Email</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='text' name='username' id='username' placeholder="Enter your username"/>
+                <label for='username'>Username</label>
+              </div>
+            </div>
+
+
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input class='validate' type='password' name='password' id='password' placeholder="Enter your password"/>
+                <label for='password'>Password</label>
+              </div>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                  {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+                <button type='submit' name='btn_signup' class='col s12 btn btn-large waves-effect grey'>Create account!</button>
+              </div>
+              <a href="/login">Already have an account? Sign in here!</a>
+            </center>
+          </form>
+        </div>
+      </div>
+      
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>

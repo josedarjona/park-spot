@@ -1,4 +1,4 @@
-<h1>here i show single location, and some more information</h1>
+{{!-- <h1>here i show single location, and some more information</h1>
 
 
 <h2>{{locationInfo.name}}'s spots</h2>
@@ -8,12 +8,33 @@
 <br><br>
 <p>{{locationInfo.parkingDetail}}</p>
 
-<h2><a href="/createspot/{{locationInfo.id}}">create a spot</a></h2>
+<h2><a href="/createspot/{{locationInfo.id}}">create a spot</a></h2> --}}
+
+<div class="container">
+  <div class="col s12 m7">
+    <h2 class="header">{{locationInfo.name}}</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{locationInfo.address.line1}} {{locationInfo.postalCode}} </p>
+          <p>{{locationInfo.city.name}} {{locationInfo.state.name}} {{locationInfo.country.name}}</p>
+          <p>{{locationInfo.parkingDetail}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/createspot/{{locationInfo.id}}">Add a spot to this location!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
 {{!-- <div class="container-fluid">
   <div class="row"> --}}
-    <table class="table table-responsive">
+    {{!-- <table class="table table-responsive">
       <tr>
         <th class="text-center">wow</th>
         <th class="text-center">wow</th>
@@ -27,8 +48,29 @@
     <td><a href="/parkspot/{{this._id}}">{{this.createdAt}}</td></a>
      </tr>
     {{/each}}
-   </table>
+   </table> --}}
     
+  <div class="container">
+  <div class="row">
+    {{#each parkingSpots}}
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-image">
+          <img class="imgcard"src="{{this.imgPath}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title blue-text text-darken-2">{{this.spotName}}</span>
+          <p>{{this.spotLocation}}</p>
+          <p>{{this.spotDesc}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/parkspot/{{this._id}}">View Spot!</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
 
 
 
